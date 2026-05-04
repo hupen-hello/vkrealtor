@@ -38,7 +38,7 @@ export default function Home() {
       <AboutSection/>
 
       {/* 3. FEATURED PROJECTS (STAGGERED ANIMATION) */}
-      <section className="py-24 bg-[#4e7153]">
+      <section className="py-24 bg-[#111827]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial="hidden"

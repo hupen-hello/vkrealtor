@@ -35,7 +35,6 @@ const lineDraw: Variants = {
   }
 };
 
-// FOOLPROOF IMAGE REVEAL (Ye har browser me chalega)
 const imageReveal: Variants = {
   hidden: { opacity: 0, y: 50, scale: 1.05 },
   visible: { 
@@ -48,7 +47,7 @@ const imageReveal: Variants = {
 
 export default function AboutSection() {
   return (
-    <section className="py-32 px-15   mx-auto flex flex-col md:flex-row gap-16 md:gap-24 items-center  text-white overflow-hidden">
+    <section className="py-32 px-15  bg-[#4e7153] mx-auto flex flex-col md:flex-row gap-16 md:gap-24 items-center  text-white overflow-hidden">
       
       {/* === LEFT CONTENT === */}
       <motion.div
@@ -65,7 +64,7 @@ export default function AboutSection() {
           className="font-josefin text-3xl md:text-5xl uppercase tracking-widest mb-4"
         >
           Welcome to the world of <br />
-          <span className="text-gray-500">VK Realtor</span>
+          <span className="text-gray-300">VK Realtor</span>
         </motion.h2>
 
         <motion.p 
@@ -77,7 +76,7 @@ export default function AboutSection() {
 
         <motion.p 
           variants={textReveal} 
-          className="font-optima text-gray-400 text-base leading-relaxed mb-12 max-w-lg"
+          className="font-optima text-gray-100 text-base leading-relaxed mb-12 max-w-lg"
         >
           From the very first blueprint to the final brick, our commitment has been unwavering to create homes
           that don’t just shelter, but inspire. Each of our creations is a symphony of architecture, comfort, and

@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
+import CustomCursor from '@/components/CustomCursor';
 
 export const metadata: Metadata = {
   title: 'VK Realtor | Creating Space for Life',
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-[#F4EFEA] text-[#1a1a1a] antialiased font-optima">
         <SmoothScroll>
+          <CustomCursor />
           <Navbar />
           <main className="min-h-screen">
             {children}

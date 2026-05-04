@@ -13,14 +13,13 @@ const bannerImages = [
 
 // --- Framer Motion Variants ---
 
-// 1. Container jo har letter ko ek-ek karke trigger karega
 const sentenceVariant: Variants = {
   hidden: { opacity: 1 },
   visible: {
     opacity: 1,
     transition: {
       delayChildren: 0.2,
-      staggerChildren: 0.06, // Har letter ke aane me 0.06s ka gap
+      staggerChildren: 0.06, 
     },
   },
 };
