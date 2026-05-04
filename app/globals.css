@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --font-freight: "FreightBigLight", serif;
+  --font-optima: "Optima", sans-serif;
+}
+
+/* 1. Freight Big Light Setup (.otf format) */
+@font-face {
+  font-family: "FreightBigLight";
+  src: url("/fonts/Freight-BigLight.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Optima Setup (.ttf format) */
+@font-face {
+  font-family: "Optima";
+  src: url("/fonts/Optima.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Smooth Scrolling Setup */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 3. Global Styles */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "FreightBigLight", serif;
+    letter-spacing: -0.025em; 
+    color: #d09e31 ;
+    text-transform: none !important; 
+  }
+
+  p {
+    font-family: "Optima", sans-serif;
+    color: #4a4a4a;
+    line-height: 1.625; 
+  }
+}
