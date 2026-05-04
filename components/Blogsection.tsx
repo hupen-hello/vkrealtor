@@ -52,7 +52,6 @@ const cardVariants: Variants = {
 
 export default function BlogSection() {
   return (
-    // Base text color changed to white for dark theme
     <section className="py-32 px-6 max-w-[95%] md:max-w-7xl mx-auto bg-#111827 text-white">
       
       {/* --- Header Section --- */}
@@ -63,11 +62,9 @@ export default function BlogSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          {/* Lighter gray for subtitle */}
           <p className="font-optima text-gray-400 uppercase tracking-[0.2em] text-xs mb-4">
             Insights & Stories
           </p>
-          {/* Premium Golden Color matching your logo/screenshot */}
           <h2 className="font-freight text-5xl md:text-6xl font-light leading-tight text-[#dcb153]">
             The Journal
           </h2>
@@ -80,7 +77,6 @@ export default function BlogSection() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-8 md:mt-0"
         >
-          {/* White text and light gray lines for link */}
           <Link
             href="/journal"
             className="group relative inline-flex items-center gap-4 text-xs font-optima tracking-[0.2em] uppercase pb-2 text-white"
@@ -114,19 +110,16 @@ export default function BlogSection() {
               />
             </div>
 
-            {/* Lighter text for meta info */}
             <div className="flex items-center gap-3 font-optima text-[10px] md:text-xs text-gray-400 uppercase tracking-widest mb-4">
               <span>{post.category}</span>
               <span className="w-1 h-1 bg-gray-600 rounded-full"></span>
               <span>{post.date}</span>
             </div>
 
-            {/* White Title */}
             <h3 className="font-freight text-3xl md:text-[2rem] leading-snug text-white mb-6 group-hover:text-[#dcb153] transition-colors duration-300">
               {post.title}
             </h3>
 
-            {/* Read Article Link */}
             <div className="mt-auto">
               <span className="relative inline-flex items-center gap-4 text-[10px] md:text-xs font-optima tracking-[0.2em] uppercase pb-1 text-white">
                 <span className="relative z-10">Read Article</span>

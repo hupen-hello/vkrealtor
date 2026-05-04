@@ -9,25 +9,25 @@ import { useRef, useState } from "react"; // 1. Ye hooks import kiye
 const residentialProjects = [
   {
     id: 1,
-    title: "EXOTICA EASTERN COURT",
+    title: " EASTERN COURT",
     status: "COMPLETED",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2000&auto=format&fit=crop",
   },
   {
     id: 2,
-    title: "EXOTICA EAST SQUARE",
+    title: " EAST SQUARE",
     status: "COMPLETED",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
   },
   {
     id: 3,
-    title: "EXOTICA FRESCO",
+    title: " FRESCO",
     status: "COMPLETED",
     image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2064&auto=format&fit=crop",
   },
   {
     id: 4,
-    title: "EXOTICA PARADISE",
+    title: " PARADISE",
     status: "ONGOING",
     image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop",
   },
@@ -52,16 +52,15 @@ export default function ResidentialSection() {
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDragging || !carouselRef.current) return;
-    e.preventDefault(); // Image ko text ki tarah select hone se rokta hai
+    e.preventDefault();  
     const x = e.pageX - carouselRef.current.offsetLeft;
-    const walk = (x - startX) * 1.5; // Scroll speed multiplier (1.5x)
+    const walk = (x - startX) * 1.5;  
     carouselRef.current.scrollLeft = scrollLeft - walk;
   };
 
   return (
     <section className="w-full bg-[#F3EBE3] flex flex-col md:flex-row overflow-hidden">
       
-      {/* LEFT SIDE: Lifestyle Image */}
       <div className="w-full md:w-[40%] relative min-h-[400px] md:min-h-[600px] pointer-events-none">
         <Image 
           src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2070&auto=format&fit=crop" 
@@ -71,7 +70,6 @@ export default function ResidentialSection() {
         />
       </div>
 
-      {/* RIGHT SIDE: Content & Carousel */}
       <div className="w-full md:w-[60%] py-16 px-6 md:py-20 md:pl-16 md:pr-0 flex flex-col justify-center">
         
         {/* Section Heading */}
@@ -85,7 +83,6 @@ export default function ResidentialSection() {
           Residential
         </motion.h2>
 
-        {/* 3. Horizontal Scrollable Carousel - EVENTS AND REF ADDED HERE */}
         <div 
           ref={carouselRef}
           onMouseDown={handleMouseDown}
@@ -104,7 +101,6 @@ export default function ResidentialSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              // Images ko drag karte time click na ho isliye pointer-events set kiye hain
               className="snap-center shrink-0 w-[280px] md:w-[320px] h-[400px] md:h-[450px] relative rounded-2xl overflow-hidden group"
             >
               <Image 
@@ -136,7 +132,6 @@ export default function ResidentialSection() {
 
         </div>
 
-        {/* Discover More Link */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

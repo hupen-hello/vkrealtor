@@ -48,8 +48,7 @@ const imageReveal: Variants = {
 
 export default function AboutSection() {
   return (
-    // Background color ki class hata di taaki main theme ke sath match kare
-    <section className="py-32 px-6 max-w-[95%] md:max-w-7xl mx-auto flex flex-col md:flex-row gap-16 md:gap-24 items-center text-white overflow-hidden">
+    <section className="py-32 px-15   mx-auto flex flex-col md:flex-row gap-16 md:gap-24 items-center  text-white overflow-hidden">
       
       {/* === LEFT CONTENT === */}
       <motion.div

@@ -3,8 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-// Bank Partners Data
-// Yahan apne actual logo images ka path daal dena public folder se
 const partners = [
   { id: 1, name: "ICICI Bank", logo: "/logos/icici.png" },
   { id: 2, name: "Punjab National Bank", logo: "/logos/pnb.png" },
@@ -15,7 +13,6 @@ const partners = [
 ];
 
 export default function FinancialPartners() {
-  // Infinite scroll ko seamless banane ke liye hum array ko duplicate karte hain
   const duplicatedPartners = [...partners, ...partners];
 
   return (
@@ -38,19 +35,15 @@ export default function FinancialPartners() {
       {/* Infinite Running Carousel Section */}
       <div className="w-full relative flex items-center">
         
-        {/* Optional: Left & Right gradient fades for premium feel */}
         <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#F3EAE1] to-transparent z-10"></div>
         <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#F3EAE1] to-transparent z-10"></div>
 
-        {/* Marquee Track */}
         <motion.div 
           className="flex gap-4 md:gap-6 pr-4 md:pr-6"
-          // x: [0, "-50%"] is the magic for infinite scroll. 
-          // Ye poore container ko aadha move karega, aur kyu ki items duplicated hain, toh seamless loop banega.
           animate={{ x: ["0%", "-50%"] }}
           transition={{ 
             ease: "linear", 
-            duration: 20, // Duration badha kar slow kar sakte ho
+            duration: 20, 
             repeat: Infinity 
           }}
         >
@@ -60,9 +53,6 @@ export default function FinancialPartners() {
               key={`${partner.id}-${index}`} 
               className="w-[180px] md:w-[240px] h-[80px] md:h-[100px] shrink-0 border border-gray-300/60 flex items-center justify-center bg-transparent group hover:bg-white/50 transition-colors duration-300"
             >
-              {/* Jab tak tumhare paas real logos nahi hain, text dikhega. 
-                  Real images lagane ke baad is span ko comment kar dena aur <Image> ko uncomment kar lena */}
-              
               <span className="font-optima text-xs md:text-sm font-semibold text-gray-700 tracking-wider uppercase">
                 {partner.name}
               </span>

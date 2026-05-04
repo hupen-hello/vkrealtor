@@ -12,7 +12,7 @@ const textReveal: Variants = {
 
 function Enquirysection() {
   return (
-     <section className="w-full bg-#0a0f1a text-white py-24 px-6 md:px-16 flex justify-center font-optima">
+     <section className="w-full bg-[#4e7153] text-white py-24 px-6 md:px-16 flex justify-center font-optima">
       <div className="max-w-5xl w-full">
         
         {/* Heading Section */}
@@ -34,19 +34,19 @@ function Enquirysection() {
             <input 
               type="text" 
               placeholder="Name" 
-              className="w-full bg-transparent border-b border-gray-600 pb-3 text-sm focus:outline-none focus:border-white transition-colors placeholder:text-gray-400"
+              className="w-full bg-transparent border-b border-[#d09e31] pb-3 text-sm focus:outline-none focus:border-white transition-colors placeholder:text-gray-400"
             />
             
             <input 
               type="tel" 
               placeholder="Phone Number" 
-              className="w-full bg-transparent border-b border-gray-600 pb-3 text-sm focus:outline-none focus:border-white transition-colors placeholder:text-gray-400"
+              className="w-full bg-transparent border-b border-[#d09e31] pb-3 text-sm focus:outline-none focus:border-white transition-colors placeholder:text-gray-400"
             />
             
             <input 
               type="email" 
               placeholder="Email" 
-              className="w-full bg-transparent border-b border-gray-600 pb-3 text-sm focus:outline-none focus:border-white transition-colors placeholder:text-gray-400"
+              className="w-full bg-transparent border-b border-[#d09e31] pb-3 text-sm focus:outline-none focus:border-white transition-colors placeholder:text-gray-400"
             />
 
             {/* Privacy Policy Checkbox */}
@@ -62,7 +62,7 @@ function Enquirysection() {
             </div>
 
             {/* reCAPTCHA Mockup (Dark Mode) */}
-            <div className="mt-4 border border-gray-700 bg-[#0a0f1a] p-3 flex items-center justify-between w-[300px] rounded-sm">
+            <div className="mt-4 border border-[#4e7153] bg-[#4e7153] p-3 flex items-center justify-between w-[300px] rounded-sm">
               <div className="flex items-center gap-3">
                 <input type="checkbox" className="w-6 h-6 border-gray-500 rounded-sm cursor-pointer accent-green-500" />
                 <span className="text-sm">Im not a robot</span>
@@ -83,11 +83,11 @@ function Enquirysection() {
             
             <textarea 
               placeholder="Message" 
-              className="w-full h-full bg-transparent border border-gray-600 p-5 text-sm focus:outline-none focus:border-white transition-colors resize-none placeholder:text-gray-400"
+              className="w-full h-full bg-transparent border border-[#d09e31] p-5 text-sm focus:outline-none focus:border-white transition-colors resize-none placeholder:text-gray-400"
             ></textarea>
 
             {/* Overlapping Circular Submit Button */}
-            <button className="absolute -bottom-8 -right-4 md:-bottom-12 md:-right-12 w-28 h-28 md:w-36 md:h-36 rounded-full border border-white flex items-center justify-center bg-#0a0f1a text-white hover:bg-white hover:text-black transition-all duration-500 z-10 overflow-hidden group">
+            <button className="absolute -bottom-8 -right-4 md:-bottom-12 md:-right-12 w-28 h-28 md:w-36 md:h-36 rounded-full border border-[#d09e31] flex items-center justify-center bg-#0a0f1a text-white hover:bg-white hover:text-[#d09e31] transition-all duration-500 z-10 overflow-hidden group">
               <span className="text-xs tracking-[0.2em] uppercase z-10 relative group-hover:scale-105 transition-transform">
                 Submit
               </span>

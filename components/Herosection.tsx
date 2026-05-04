@@ -1,61 +1,120 @@
-import React from 'react'
-import Image from "next/image";
-import { motion , Variants } from "framer-motion";
+"use client";
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
+import React, { useState, useEffect } from 'react';
+import Image from "next/image";
+import { motion, AnimatePresence, Variants } from "framer-motion";
+
+// --- 3 Premium Banner Images ---
+const bannerImages = [
+  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+];
+
+// --- Framer Motion Variants ---
+
+// 1. Container jo har letter ko ek-ek karke trigger karega
+const sentenceVariant: Variants = {
+  hidden: { opacity: 1 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.2 },
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.06, // Har letter ke aane me 0.06s ka gap
+    },
+  },
+};
+
+const letterVariant: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.2, ease: "easeOut", delay: 1.5 } 
+  },
 };
 
-function Herosection() {
+export default function Herosection() {
+  const [currentImg, setCurrentImg] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImg((prev) => (prev + 1) % bannerImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const titleLine1 = "Creating Space";
+  const titleLine2 = "For Life";
+
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image/Video Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60 z-10"></div>
-
-        {/* Placeholder for Hero Image - Replace src with your actual property image */}
-        <Image
-          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop"
-          alt="Luxury Real Estate"
-          fill
-          className="object-cover z-0"
-          priority
-        />
-
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+      
+      <AnimatePresence mode="wait">
         <motion.div
-          className="relative z-20 text-center px-6 flex flex-col items-center"
+          key={currentImg}
+          initial={{ opacity: 0, scale: 1.05 }} 
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="absolute inset-0 z-0"
+        >
+          <Image
+            src={bannerImages[currentImg]}
+            alt={`VK Realtor Banner ${currentImg + 1}`}
+            fill
+            className="object-cover"
+            priority
+          />
+        </motion.div>
+      </AnimatePresence>
+
+      <div className="absolute inset-0 bg-black/50 z-10"></div>
+
+      <div className="relative z-20 text-center px-6 flex flex-col items-center">
+        
+        <motion.h1
+          className="font-freight text-white text-5xl md:text-[4rem] leading-[1.1] mb-6 tracking-tight"
+          variants={sentenceVariant}
           initial="hidden"
           animate="visible"
-          variants={staggerContainer}
         >
-          <motion.h1
-            variants={fadeUp}
-            className="font-josefin text-gray-300 text-5xl md:text-7xl font-bold tracking-widest uppercase mb-4"
-          >
-            Creating Space <br />
-            <span className="text-gray-300">For Life</span>
-          </motion.h1>
+          <span className="block">
+            {titleLine1.split("").map((char, index) => (
+              <motion.span key={index} variants={letterVariant} className="inline-block">
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </span>
+          <span className="block ">
+            {titleLine2.split("").map((char, index) => (
+              <motion.span key={index} variants={letterVariant} className="inline-block">
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </span>
+        </motion.h1>
 
-          <motion.p
-            variants={fadeUp}
-            className="font-dm-sans text-gray-300 max-w-xl mx-auto mb-10 text-sm md:text-base"
-          >
-            Experience premium living with our world-class residential and
-            commercial properties. Designed for the modern lifestyle.
-          </motion.p>
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          className="font-optima text-gray-200 max-w-xl mx-auto text-lg md:text-xl leading-relaxed"
+        >
+          Experience premium living with our world-class residential and
+          commercial properties. Designed for the modern lifestyle.
+        </motion.p>
 
-         
-        </motion.div>
-      </section>
-  )
+      </div>
+    </section>
+  );
 }
-
-export default Herosection

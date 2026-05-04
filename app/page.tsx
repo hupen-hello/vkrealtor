@@ -38,7 +38,7 @@ export default function Home() {
       <AboutSection/>
 
       {/* 3. FEATURED PROJECTS (STAGGERED ANIMATION) */}
-      <section className="py-24 bg-[#111827]">
+      <section className="py-24 bg-[#4e7153]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -64,19 +64,19 @@ export default function Home() {
           >
             {/* Project Card 1 */}
             <ProjectCard
-              title="Exotica Fresco"
+              title="Fresco"
               category="Residential"
               image="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2000&auto=format&fit=crop"
             />
             {/* Project Card 2 */}
             <ProjectCard
-              title="Exotica Dreamville"
+              title="Dreamville"
               category="Commercial"
               image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
             />
             {/* Project Card 3 */}
             <ProjectCard
-              title="Exotica Plots"
+              title="Plots"
               category="Land/Plots"
               image="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2064&auto=format&fit=crop"
             />
