@@ -153,7 +153,6 @@ export default function AboutSection() {
               </span>
             </button>
 
-            {/* Signature Block */}
             
 
           </div>
