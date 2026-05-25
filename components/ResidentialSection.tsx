@@ -127,7 +127,7 @@ export default function ProjectsSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="snap-center shrink-0 w-[300px] md:w-[380px] h-[400px] md:h-[500px] relative rounded-sm overflow-hidden group"
+                className="snap-center shrink-0 w-[300px] md:w-[380px] h-[400px] md:h-[300px] relative rounded-sm overflow-hidden group"
               >
                 <Image 
                   src={project.image} 

@@ -44,7 +44,7 @@ export default function AboutSection() {
   return (
     <section ref={sectionRef} className="py-15 bg-[#F3EBE3] px-6 max-w-[85%] md:max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16 overflow-hidden">
       
-      <div className="w-full lg:w-1/2 flex gap-4 md:gap-6 h-[500px] md:h-[650px]">
+      <div className="w-full lg:w-1/2 flex gap-4 md:gap-6 h-[300px] md:h-[450px]">
         
         {/* Left Column (2 Small Images) */}
         <div className="w-[45%] flex flex-col gap-4 md:gap-6 h-full">

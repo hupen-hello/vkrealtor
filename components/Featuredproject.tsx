@@ -74,7 +74,7 @@ export default function FeaturedSection() {
         
         <motion.h2 
           variants={fadeUp} 
-          className="font-freight text-4xl md:text-5xl lg:text-6xl text-[#4e6957]"
+          className="font-freight text-4xl md:text-5xl lg:text-6xl text-[#4e6957] mb-4"
         >
           <span className="">Featured</span> Properties you'll love
         </motion.h2>
@@ -98,7 +98,7 @@ export default function FeaturedSection() {
             >
               
               {/* --- IMAGE SIDE --- */}
-              <motion.div variants={fadeUp} className="w-full lg:w-1/2 relative h-[450px] md:h-[600px] group overflow-hidden rounded-sm">
+              <motion.div variants={fadeUp} className="w-full lg:w-1/2 relative h-[350px] md:h-[400px] group overflow-hidden rounded-sm">
                 <Image
                   src={prop.image}
                   alt={prop.titlePart1}
@@ -128,9 +128,9 @@ export default function FeaturedSection() {
                   {prop.titlePart1} <span className="italic">{prop.titlePart2}</span>
                 </h3>
 
-                <p className="font-optima text-gray-600 leading-relaxed mb-10 border-b border-gray-200 pb-10">
+                {/* <p className="font-optima text-gray-600 leading-relaxed mb-10 border-b border-gray-200 pb-10">
                   {prop.desc}
-                </p>
+                </p> */}
 
                 {/* Features Grid */}
                 <div className="w-full flex flex-col gap-5 mb-12">
