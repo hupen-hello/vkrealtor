@@ -12,7 +12,7 @@ export default function Footer() {
           {/* COLUMN 1: Logo & About */}
           <div className="flex flex-col gap-6">
             <Image 
-              src="/logo.png" // Apni logo file ka path check kar lena
+              src="/logo1.png" // Apni logo file ka path check kar lena
               alt="VK Realtor Logo" 
               width={140} 
               height={40} 
