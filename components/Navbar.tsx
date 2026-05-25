@@ -23,7 +23,6 @@ const AnimatedNavLink = ({ href, title }: { href: string; title: string }) => {
         className="absolute w-[100px] h-[100px] bg-white rounded-full z-0 pointer-events-none"
       />
       
-      {/* Faint Concentric Ring Effect (Optional Premium Detail) */}
       <motion.div
         variants={{
           initial: { scale: 0, opacity: 0 },
@@ -48,7 +47,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-gradient-to-b from-black/80 to-transparent backdrop-blur-sm border-b border-white/5">
+    <nav className="fixed top-0 w-full z-50 bg-gradient-to-b from-black/80 to-black backdrop-blur-sm border-b border-white/5">
       <div className="max-w-[95%] mx-auto h-24 flex items-center justify-between">
         
         {/* Logo Section - UPDATED TO IMAGE */}

@@ -1,128 +1,176 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import {  Variants } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 
-// --- Premium Animation Variants ---
-
+// --- Text Animations ---
 const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.2 },
   },
 };
 
-const textReveal: Variants = {
-  hidden: { opacity: 0, y: 40 },
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
   visible: { 
     opacity: 1, 
     y: 0, 
-    transition: { duration: 1, ease: [0.21, 0.47, 0.32, 0.98] } 
+    transition: { duration: 0.8, ease: "easeOut" } 
   },
 };
 
-const lineDraw: Variants = {
-  hidden: { width: 0 },
-  visible: { 
-    width: "60px", 
-    transition: { duration: 1, delay: 0.3, ease: "easeOut" } 
-  }
-};
-
-const imageReveal: Variants = {
-  hidden: { opacity: 0, y: 50, scale: 1.05 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    scale: 1,
-    transition: { duration: 1.2, ease: "easeOut" } 
-  }
-};
-
 export default function AboutSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Parallax Scroll Tracking
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],  
+  });
+
+  const y1 = useTransform(scrollYProgress, [0, 1], ["-25%", "70%"]); 
+  const y2 = useTransform(scrollYProgress, [0, 1], ["70%", "-35%"]);
+  const scaleImage = useTransform(scrollYProgress, [0, 0.5, 1], [1.1, 1, 1.05]);
+
+  const advantages = [
+    "Trusted Market Expertise",
+    "Local & Regional Market Knowledge",
+    "Clear Pricing and Documentation",
+  ];
+
   return (
-    <section className="py-32 px-15  bg-[#4e7153] mx-auto flex flex-col md:flex-row gap-16 md:gap-24 items-center  text-white overflow-hidden">
+    <section ref={sectionRef} className="py-15 bg-[#F3EBE3] px-6 max-w-[85%] md:max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16 overflow-hidden">
       
-      {/* === LEFT CONTENT === */}
-      <motion.div
-        className="md:w-1/2 flex flex-col items-start"
+      <div className="w-full lg:w-1/2 flex gap-4 md:gap-6 h-[500px] md:h-[650px]">
+        
+        {/* Left Column (2 Small Images) */}
+        <div className="w-[45%] flex flex-col gap-4 md:gap-6 h-full">
+          
+          {/* Top Small Image */}
+          <div className="relative h-[48%] w-full rounded-sm overflow-hidden shadow-md group">
+            <motion.div className="w-full h-[130%] absolute -top-[15%]" style={{ y: y1 }}>
+              <Image
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+                alt="Interior"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+          </div>
+
+          {/* Bottom Small Image */}
+          <div className="relative h-[48%] w-full rounded-sm overflow-hidden shadow-md group bg-white p-2">
+            <motion.div className="w-full h-[130%] absolute -top-[15%]" style={{ y: y2 }}>
+              <Image
+                src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
+                alt="Blueprint and Keys"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Right Column (1 Tall Image) */}
+        <div className="w-[55%] h-full relative rounded-sm overflow-hidden shadow-lg group">
+          <motion.div className="w-full h-full absolute" style={{ scale: scaleImage }}>
+            <Image
+              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop"
+              alt="Modern Architecture"
+              fill
+              className="object-cover"
+            />
+          </motion.div>
+        </div>
+
+      </div>
+
+
+      {/* === RIGHT SIDE (Content exactly like video) === */}
+      <motion.div 
+        className="w-full lg:w-1/2 flex flex-col items-start lg:pl-10 mt-10 lg:mt-0"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <motion.div variants={lineDraw} className="h-[1px] bg-white/50 mb-10"></motion.div>
+        {/* Subtitle with line */}
+        <motion.div variants={fadeUp} className="flex items-center gap-4 mb-4">
+          <span className="w-8 h-[1px] bg-gray-500"></span>
+          <span className="font-optima text-[#1a1a1a] text-sm font-medium tracking-wider">About Us</span>
+        </motion.div>
 
+        {/* Main Heading */}
         <motion.h2 
-          variants={textReveal} 
-          className="font-josefin text-3xl md:text-5xl uppercase tracking-widest mb-4"
+          variants={fadeUp}
+          className="font-freight text-5xl md:text-[4rem] text-[#1a1a1a] mb-6 leading-[1.1] tracking-tight"
         >
-          Welcome to the world of <br />
-          <span className="text-gray-300">VK Realtor</span>
+          <span>Guiding</span> Smart Property<br />Decisions
         </motion.h2>
 
+        {/* Description Paragraph */}
         <motion.p 
-          variants={textReveal} 
-          className="font-optima text-gray-200 text-lg md:text-xl leading-relaxed mb-6"
+          variants={fadeUp}
+          className="font-optima text-gray-500 text-base leading-relaxed mb-10 max-w-lg"
         >
-          With over two decades of excellence, VK Realtor has redefined luxury living across Delhi/NCR.
+          We are a professional real estate business dedicated to helping clients buy, sell, and invest in properties with confidence. Our team combines local market knowledge, verified listings, and transparent
         </motion.p>
 
-        <motion.p 
-          variants={textReveal} 
-          className="font-optima text-gray-100 text-base leading-relaxed mb-12 max-w-lg"
-        >
-          From the very first blueprint to the final brick, our commitment has been unwavering to create homes
-          that don’t just shelter, but inspire. Each of our creations is a symphony of architecture, comfort, and
-          craftsmanship, designed to delight, and built to endure.
-        </motion.p>
+        {/* === INDENTED SECTION (Border Left) === */}
+        <motion.div variants={fadeUp} className="border-l-2 border-gray-400 pl-6 md:pl-10 py-1 w-full">
+          
+          <h3 className="font-freight  text-3xl md:text-4xl text-[#1a1a1a] mb-6">
+            Our Business Advantages
+          </h3>
 
-        <motion.div variants={textReveal}>
-          <Link
-            href="/about"
-            className="group relative inline-flex items-center gap-4 text-xs font-optima tracking-[0.2em] uppercase pb-2"
-          >
-            <span className="relative z-10 text-white group-hover:text-gray-300 transition-colors duration-300">
-              Read Our Story
-            </span>
-            <span className="absolute bottom-0 left-0 w-full h-[1px] bg-white/20"></span>
-            <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-white group-hover:w-full transition-all duration-500 ease-out"></span>
-          </Link>
-        </motion.div>
-      </motion.div>
+          <ul className="flex flex-col gap-4 mb-10">
+            {advantages.map((item, index) => (
+              <li key={index} className="flex items-center gap-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-gray-400 shrink-0"></span>
+                <span className="font-optima text-[#1a1a1a] text-base">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
 
-      {/* === RIGHT IMAGE === */}
-      <motion.div
-        className="md:w-1/2 relative h-[450px] md:h-[650px] w-full rounded-sm overflow-hidden"
-        variants={imageReveal}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        {/* Infinite Slow Scale Wrapper */}
-        <motion.div
-          className="w-full h-full relative"
-          animate={{ scale: 1.1 }}
-          transition={{ 
-            duration: 20, 
-            ease: "linear", 
-            repeat: Infinity, 
-            repeatType: "reverse" 
-          }}
-        >
-          <Image
-            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2000&auto=format&fit=crop"
-            alt="VK Realtor Luxury Interior"
-            fill
-            className="object-cover" 
-          />
-          <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent"></div>
+          {/* Action Row */}
+          <div className="flex flex-wrap items-center gap-8 md:gap-12">
+            
+            {/* Pill Button */}
+            <button className="group flex items-center gap-4 bg-[#f4f4f4] hover:bg-[#e8e8e8] transition-colors rounded-full py-2 pl-6 pr-2 shadow-sm border border-gray-100">
+              <span className="font-optima text-[#1a1a1a] text-sm font-semibold">
+                More About Us
+              </span>
+              {/* Brown Plane/Arrow Icon */}
+              <span className="w-10 h-10 rounded-full bg-[#a97d54] transition-colors flex items-center justify-center text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 -rotate-45">
+                  <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
+                </svg>
+              </span>
+            </button>
+
+            {/* Signature Block */}
+            <div className="flex items-center gap-4">
+              <div className="relative w-20 h-10 opacity-70">
+                <Image
+                  src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Signature_of_John_Hancock.svg"
+                  alt="Signature"
+                  fill
+                  className="object-contain object-left"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-optima text-[#1a1a1a] text-sm font-bold">Michael Anderson</span>
+                <span className="font-optima text-gray-500 text-xs">Managing director</span>
+              </div>
+            </div>
+
+          </div>
+
         </motion.div>
       </motion.div>
 

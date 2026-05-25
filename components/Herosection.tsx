@@ -56,7 +56,7 @@ export default function Herosection() {
   const titleLine2 = "For Life";
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-white">
       
       <AnimatePresence mode="wait">
         <motion.div
@@ -77,12 +77,12 @@ export default function Herosection() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="absolute inset-0 bg-black/50 z-10"></div>
+      <div className="absolute inset-0 bg-white/70 z-10"></div>
 
       <div className="relative z-20 text-center px-6 flex flex-col items-center">
         
         <motion.h1
-          className="font-freight text-white text-5xl md:text-[4rem] leading-[1.1] mb-6 tracking-tight"
+          className="font-freight text-black text-5xl md:text-[4rem] leading-[1.1] mb-6 tracking-tight"
           variants={sentenceVariant}
           initial="hidden"
           animate="visible"
@@ -107,7 +107,7 @@ export default function Herosection() {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="font-optima text-gray-200 max-w-xl mx-auto text-lg md:text-xl leading-relaxed"
+          className="font-optima text-gray-700 max-w-xl mx-auto text-lg md:text-xl leading-relaxed"
         >
           Experience premium living with our world-class residential and
           commercial properties. Designed for the modern lifestyle.

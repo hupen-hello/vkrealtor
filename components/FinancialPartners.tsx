@@ -16,7 +16,7 @@ export default function FinancialPartners() {
   const duplicatedPartners = [...partners, ...partners];
 
   return (
-    <section className="w-full bg-[#EFE7E3] py-24 overflow-hidden flex flex-col items-center">
+    <section className="w-full bg-[#EFE7E3] py-15 overflow-hidden flex flex-col items-center">
       
       <div className="max-w-[95%] md:max-w-7xl w-full px-6 mb-16">
         {/* Animated Heading */}

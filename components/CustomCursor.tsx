@@ -39,7 +39,6 @@ export default function CustomCursor() {
     return () => window.removeEventListener("mousemove", moveCursor);
   }, [cursorX, cursorY, isVisible]);
 
-  // Agar user mobile/touch screen par hai, toh cursor hide rakho
   if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
     return null;
   }
