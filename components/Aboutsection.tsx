@@ -154,20 +154,7 @@ export default function AboutSection() {
             </button>
 
             {/* Signature Block */}
-            <div className="flex items-center gap-4">
-              <div className="relative w-20 h-10 opacity-70">
-                <Image
-                  src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Signature_of_John_Hancock.svg"
-                  alt="Signature"
-                  fill
-                  className="object-contain object-left"
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-optima text-[#1a1a1a] text-sm font-bold">Michael Anderson</span>
-                <span className="font-optima text-gray-500 text-xs">Managing director</span>
-              </div>
-            </div>
+            
 
           </div>
 
