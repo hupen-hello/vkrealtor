@@ -69,14 +69,14 @@ export default function FeaturedSection() {
       >
         <motion.div variants={fadeUp} className="flex items-center gap-4 mb-4">
           <span className="w-6 h-[1px] bg-gray-500"></span>
-          <span className="font-optima text-[#1a1a1a] text-sm font-medium tracking-widest uppercase">Featured List</span>
+          <span className="font-optima text-[#d09e31] text-sm font-medium tracking-widest uppercase">OUR PORTFOLIO</span>
         </motion.div>
         
         <motion.h2 
           variants={fadeUp} 
-          className="font-freight text-4xl md:text-5xl lg:text-6xl text-[#1a1a1a]"
+          className="font-freight text-4xl md:text-5xl lg:text-6xl text-[#4e6957]"
         >
-          <span className="italic">Featured</span> Properties you'll love
+          <span className="">Featured</span> Properties you'll love
         </motion.h2>
       </motion.div>
 
@@ -120,7 +120,7 @@ export default function FeaturedSection() {
               {/* --- CONTENT SIDE --- */}
               <motion.div variants={fadeUp} className="w-full lg:w-1/2 flex flex-col items-start px-4 md:px-8">
                 
-                <p className="font-optima text-gray-500 uppercase tracking-widest text-xs mb-3">
+                <p className="font-optima text-[#d09e31] uppercase tracking-widest text-xs mb-3">
                   {prop.category}
                 </p>
                 

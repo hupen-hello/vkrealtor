@@ -100,13 +100,13 @@ export default function AboutSection() {
         {/* Subtitle with line */}
         <motion.div variants={fadeUp} className="flex items-center gap-4 mb-4">
           <span className="w-8 h-[1px] bg-gray-500"></span>
-          <span className="font-optima text-[#1a1a1a] text-sm font-medium tracking-wider">About Us</span>
+          <span className="font-optima text-[#d09e31] text-sm font-medium tracking-wider">ABOUT US</span>
         </motion.div>
 
         {/* Main Heading */}
         <motion.h2 
           variants={fadeUp}
-          className="font-freight text-5xl md:text-[4rem] text-[#1a1a1a] mb-6 leading-[1.1] tracking-tight"
+          className="font-freight text-5xl md:text-[4rem] text-[#4e6957] mb-6 leading-[1.1] tracking-tight"
         >
           <span>Guiding</span> Smart Property<br />Decisions
         </motion.h2>

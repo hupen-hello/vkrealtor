@@ -25,7 +25,7 @@ export default function FinancialPartners() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="font-freight text-4xl md:text-6xl text-[#1a1a1a] leading-tight font-light max-w-4xl"
+          className="font-freight text-4xl md:text-6xl text-[#4e6957] leading-tight font-light max-w-4xl"
         >
           Empowering dreams with leading <br className="hidden md:block" />
           financial institutions

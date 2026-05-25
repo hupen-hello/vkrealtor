@@ -64,7 +64,7 @@ export default function ProjectsSection() {
           className="flex items-center gap-4 mb-4 justify-center"
         >
           <span className="w-8 h-[1px] bg-gray-500"></span>
-          <span className="font-optima text-[#1a1a1a] text-sm font-medium tracking-wider">Our Portfolio</span>
+          <span className="font-optima text-[#d09e31] text-sm font-medium tracking-wider">FEATURED LIST</span>
         </motion.div>
 
         {/* Main Heading (Matching the image) */}
@@ -73,9 +73,9 @@ export default function ProjectsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="font-freight text-4xl md:text-6xl text-[#1a1a1a] leading-[1.1] tracking-tight mb-12"
+          className="font-freight text-4xl md:text-6xl text-[#4e6957] leading-[1.1] tracking-tight mb-12"
         >
-          <span className="italic">Modern</span> Infrastructure & <br />thoughtful living spaces
+          <span className="">Modern</span> Infrastructure & <br />thoughtful living spaces
         </motion.h2>
 
         {/* Pill Shaped Tabs */}
@@ -167,7 +167,7 @@ export default function ProjectsSection() {
             href={`/${activeTab.toLowerCase()}`} 
             className="group relative inline-flex items-center gap-4 text-xs font-optima tracking-[0.2em] text-[#1a1a1a] uppercase pb-2"
           >
-            <span className="relative z-10 transition-colors duration-300">
+            <span className="relative z-10 text-[#d09e31] transition-colors duration-300">
               View All {activeTab}
             </span>
             <span className="absolute bottom-0 left-0 w-full h-[1px] bg-gray-300"></span>

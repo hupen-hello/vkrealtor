@@ -41,7 +41,7 @@ export default function Enquirysection() {
           className="font-freight text-4xl md:text-6xl text-center tracking-wide mb-16 leading-tight"
         >
           We will answer all <br className="hidden md:block" />
-          <span className="italic text-[#dcb153]">your questions</span>
+          <span className=" text-[#dcb153]">your questions</span>
         </motion.h2>
 
         {/* Form Layout: Split Screen on Desktop */}
