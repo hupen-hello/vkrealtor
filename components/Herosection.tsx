@@ -107,7 +107,7 @@ export default function Herosection() {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="font-optima text-gray-700 max-w-xl mx-auto text-lg md:text-xl leading-relaxed"
+          className="font-optima text-gray-800 max-w-xl mx-auto text-lg md:text-xl leading-relaxed"
         >
           Experience premium living with our world-class residential and
           commercial properties. Designed for the modern lifestyle.
