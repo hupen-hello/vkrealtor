@@ -4,12 +4,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const partners = [
-  { id: 1, name: "ICICI Bank", logo: "/logos/icici.png" },
-  { id: 2, name: "Punjab National Bank", logo: "/logos/pnb.png" },
-  { id: 3, name: "SBI", logo: "/logos/sbi.png" },
-  { id: 4, name: "Bank of Baroda", logo: "/logos/bob.png" },
-  { id: 5, name: "IDFC Bank", logo: "/logos/idfc.png" },
-  { id: 6, name: "Axis Bank", logo: "/logos/axis.png" },
+  { id: 1, name: "ICICI Bank", logo: "/1.webp" },
+  { id: 2, name: "Punjab National Bank", logo: "/2.webp" },
+  { id: 3, name: "SBI", logo: "/3.webp" },
+  { id: 4, name: "Bank of Baroda", logo: "/4.webp" },
+  { id: 5, name: "IDFC Bank", logo: "/1.webp" },
+  { id: 6, name: "Axis Bank", logo: "/2.webp" },
 ];
 
 export default function FinancialPartners() {
@@ -51,21 +51,21 @@ export default function FinancialPartners() {
             <div 
               // Duplicate items ke liye key me index use kiya h taaki unique rahe
               key={`${partner.id}-${index}`} 
-              className="w-[180px] md:w-[240px] h-[80px] md:h-[100px] shrink-0 border border-gray-300/60 flex items-center justify-center bg-transparent group hover:bg-white/50 transition-colors duration-300"
+              className="w-[180px] md:w-[240px] h-[60px] md:h-[80px] shrink-0  flex items-center justify-center bg-transparent group hover:bg-white/50 transition-colors duration-300"
             >
-              <span className="font-optima text-xs md:text-sm font-semibold text-gray-700 tracking-wider uppercase">
+              {/* <span className="font-optima text-xs md:text-sm font-semibold text-gray-700 tracking-wider uppercase">
                 {partner.name}
-              </span>
+              </span> */}
 
-              {/* 
+              
               <Image 
                 src={partner.logo} 
                 alt={partner.name} 
-                width={120} 
+                width={100} 
                 height={40} 
                 className="object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
               /> 
-              */}
+             
             </div>
           ))}
         </motion.div>
