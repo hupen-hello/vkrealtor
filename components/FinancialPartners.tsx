@@ -51,11 +51,9 @@ export default function FinancialPartners() {
             <div 
               // Duplicate items ke liye key me index use kiya h taaki unique rahe
               key={`${partner.id}-${index}`} 
-              className="w-[180px] md:w-[240px] h-[60px] md:h-[80px] shrink-0  flex items-center justify-center bg-transparent group hover:bg-white/50 transition-colors duration-300"
+              className="w-[180px] md:w-[140px] h-[60px] md:h-[80px] shrink-0  flex items-center justify-center bg-transparent group hover:bg-white/50 transition-colors duration-300"
             >
-              {/* <span className="font-optima text-xs md:text-sm font-semibold text-gray-700 tracking-wider uppercase">
-                {partner.name}
-              </span> */}
+              
 
               
               <Image 

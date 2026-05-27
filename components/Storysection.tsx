@@ -66,28 +66,28 @@ export default function StorySection() {
                 <div className="min-w-[200px] flex flex-col gap-3 group cursor-pointer">
                   <div className="w-full h-[250px] relative overflow-hidden rounded-sm">
                     <Image 
-                      src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop" 
+                      src="/story.jpg" 
                       alt="Event 1" 
                       fill 
                       className="object-cover group-hover:scale-105 transition-transform duration-500" 
                     />
                   </div>
                   <p className="font-optima text-xs tracking-widest uppercase text-gray-500 group-hover:text-black transition-colors">
-                    Senior Citizens Day
+                    gurugram it hub
                   </p>
                 </div>
 
                 <div className="min-w-[200px] flex flex-col gap-3 group cursor-pointer">
                   <div className="w-full h-[250px] relative overflow-hidden rounded-sm">
                     <Image 
-                      src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=2070&auto=format&fit=crop" 
+                      src="/story.jpg" 
                       alt="Event 2" 
                       fill 
                       className="object-cover group-hover:scale-105 transition-transform duration-500" 
                     />
                   </div>
                   <p className="font-optima text-xs tracking-widest uppercase text-gray-500 group-hover:text-black transition-colors">
-                    Fresco Resident Event
+                    Noida 62 it sector
                   </p>
                 </div>
               </div>

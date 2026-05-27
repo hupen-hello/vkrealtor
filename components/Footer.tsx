@@ -78,7 +78,7 @@ export default function Footer() {
       </div>
 
       {/* === BOTTOM COPYRIGHT BAR (Green Background) === */}
-      <div className="bg-[#4e7153] text-[#e8e8e8] py-4 px-6 flex flex-col md:flex-row justify-center items-center gap-2 font-optima text-xs tracking-widest uppercase">
+      <div className="bg-[#4e7153] text-[#e8e8e8] py-0 px-6 flex flex-col md:flex-row justify-center items-center gap-2 font-optima text-xs tracking-widest uppercase">
         <p className="text-white">Copyright 2026, All Right Reserved VK Realtor.</p>
       </div>
       
