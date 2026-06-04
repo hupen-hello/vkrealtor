@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -45,30 +45,9 @@ const AnimatedNavLink = ({ href, title }: { href: string; title: string }) => {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  // Scroll Track Logic
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
-        isScrolled 
-          ? "bg-black py-0 shadow-2xl" 
-          : "bg-gradient-to-b from-black/90 via-black/40 to-transparent  "  
-      }`}
-    >
+    <nav className="fixed top-0 w-full z-50 bg-gradient-to-b from-black/80 to-black backdrop-blur-sm border-b border-white/5">
       <div className="max-w-[95%] mx-auto h-24 flex items-center justify-between">
         
         {/* Logo Section - UPDATED TO IMAGE */}

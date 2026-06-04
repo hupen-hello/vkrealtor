@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
 import CustomCursor from '@/components/CustomCursor';
+import { Manrope } from 'next/font/google';
 
 export const metadata: Metadata = {
   title: 'VK Realtor | Creating Space for Life',

@@ -2,8 +2,9 @@
 
 @theme {
   --font-freight: "FreightBigLight", serif;
-  --font-optima: "Optima", sans-serif;
+  --font-optima: "Manrope", sans-serif;
 }
+
 
 /* 1. Freight Big Light Setup (.otf format) */
 @font-face {
@@ -16,9 +17,9 @@
 
 /* 2. Optima Setup (.ttf format) */
 @font-face {
-  font-family: "Optima";
-  src: url("/fonts/Optima.ttf") format("truetype");
-  font-weight: 400;
+  font-family: "Manrope";
+  src: url("/fonts/regular.otf") format("opentype");
+  font-weight: 200 800;  
   font-style: normal;
   font-display: swap;
 }
@@ -38,7 +39,7 @@ html {
   }
 
   p {
-    font-family: "Optima", sans-serif;
+    font-family: "Manrope", sans-serif;
     color: #4a4a4a;
     line-height: 1.625; 
   }

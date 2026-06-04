@@ -82,7 +82,7 @@ export default function Herosection() {
       <div className="relative z-20 text-center px-6 flex flex-col items-center">
         
         <motion.h1
-          className="font-freight text-white text-5xl md:text-[4rem] leading-[1.1] mb-6 tracking-tight"
+          className="font-freight text-white text-6xl md:text-[4rem] leading-[1.1] mb-6 tracking-tight"
           variants={sentenceVariant}
           initial="hidden"
           animate="visible"

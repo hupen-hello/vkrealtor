@@ -51,7 +51,7 @@ export default function Home() {
 
      <Enquirysection/>
 
-    <FinancialPartners/>
+    {/* <FinancialPartners/> */}
 
     {/* BLog section  */}
 
